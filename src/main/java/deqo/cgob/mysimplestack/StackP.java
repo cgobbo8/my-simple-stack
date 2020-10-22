@@ -44,11 +44,5 @@ public class StackP implements ISimpleStack {
         test.getSize();
         test.push(i1);
         test.push(new Item(6));
-        System.out.println(test.getSize());
-        System.out.println(test.pop().toString());
-        System.out.println(test.getSize());
-        System.out.println(test.pop().toString());
-        System.out.println(test.getSize());
-
     }
 }
