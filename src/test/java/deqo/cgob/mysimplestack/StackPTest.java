@@ -2,6 +2,7 @@ package deqo.cgob.mysimplestack;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.EmptyStackException;
 
@@ -11,10 +12,13 @@ public class StackPTest {
 
     StackP st = new StackP();
 
+    Item mockItem = Mockito.mock(Item.class);
+
     @Test
     public void isEmpty() {
         assertTrue(st.isEmpty() && st.getSize() == 0);
-        st.push(new Item(5));
+        System.out.println(mockItem.getObj());
+        st.push(mockItem);
         assertFalse(st.isEmpty());
     }
 
@@ -22,7 +26,7 @@ public class StackPTest {
     public void getSize() {
         assertEquals(st.getSize() , 0);
         for (int i = 0; i < 10; i++) {
-            st.push(new Item(i));
+            st.push(mockItem);
         }
         assertEquals(st.getSize() , 10);
         for (int i = 0; i < 5; i++) {
@@ -38,7 +42,7 @@ public class StackPTest {
 
         assertEquals(st.getSize() , 0);
         for (int i = 0; i < 10; i++) {
-            st.push(new Item(i));
+            st.push(mockItem);
         }
         assertEquals(st.getSize() , 10);
         for (int i = 0; i < 10; i++) {
@@ -90,8 +94,6 @@ public class StackPTest {
             st.push(new Item(i));
             assertEquals(st.getSize(),i+1);
         }
-
-
 
         for (int i = 5; i >= 0; i--) {
             assertEquals(st.pop().getObj(),i);
