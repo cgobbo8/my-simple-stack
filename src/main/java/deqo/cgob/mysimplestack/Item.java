@@ -3,6 +3,10 @@ package deqo.cgob.mysimplestack;
 public class Item {
     private Object obj ;
 
+    public Item(Object obj) {
+        this.obj = obj;
+    }
+
     public Object getObj() {
         return obj;
     }
@@ -18,8 +22,6 @@ public class Item {
                 '}';
     }
 
-    public Item(Object obj) {
-        this.obj = obj;
-    }
+
 
 }
